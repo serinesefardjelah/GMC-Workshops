@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    background-color: black;
+    font-family: "Space Mono", monospace;
+
+}
+
+.calculator{
+    width: 400px;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px rgba(211, 32, 32, 0.2);
+    padding: 20px;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    padding: 20px;
+}
+ .btn{
+    background-color: rgba(0,0,0, 0.5);
+    border: 1px solid black;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 22px;
+    cursor: pointer;
+ }
+
+ .calculator input{
+    padding: 20px 10px;
+    width: 100%;
+    text-align: right;
+    font-size: 40px;
+ }
+
+ #zero, #clear{
+    grid-column: span 3;
+ }
+
+ #equal{
+    background-color: green;
+ }
+ #clear{
+    background-color: red;
+ }
