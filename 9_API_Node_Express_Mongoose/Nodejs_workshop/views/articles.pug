@@ -1,0 +1,11 @@
+extends layout 
+block content
+    h1 Articles
+    p this page is supposed to display a list of articles
+
+    each article in articles
+        h2= article.title
+        p= article.content
+        p= article.author
+        hr
+   

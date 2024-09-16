@@ -1,0 +1,35 @@
+header {
+  background-color: green;
+}
+
+h3 {
+  color: #58e3e3;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+p {
+  background-color: #e08a18;
+  border: #1c2222 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li {
+  background-color: #1b18e0;
+  border: #1c2222 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+}/*# sourceMappingURL=delete.css.map */

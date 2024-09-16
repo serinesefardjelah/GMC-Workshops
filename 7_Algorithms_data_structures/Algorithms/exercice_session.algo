@@ -1,0 +1,13 @@
+
+// Create an algorithm and a flowchart that will accept/read two numbers and then display the bigger number.
+ALGORITHM maxNumber
+VAR
+    num1, num2: INTEGER
+BEGIN
+    READ num1, num2
+    IF num1 > num2 THEN
+        write num1
+    ELSE
+        write num2
+    ENDIF
+END

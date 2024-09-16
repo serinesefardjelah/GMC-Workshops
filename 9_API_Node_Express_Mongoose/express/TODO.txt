@@ -1,0 +1,9 @@
+
+We will create a fake authentication interface that let the user ‘johndoe@gmail.com’ with the password ‘123456John’ to enter a home page
+Create  a login form/ home / about us
+Implement the fake  authentication middleware 
+If the credential are wrong  return an error msg 
+If the credential are valid grant access to the home page
+In the home page will be a two links ‘Home’ and ‘About us’
+Each link route to a different page (the content is your choice)
+

@@ -1,0 +1,20 @@
+doctype doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title
+    body
+        h1 Login
+        form(action='/login', method='POST')
+            label(for="email") Email: 
+            input(type="email", name="email", id="email")
+            br
+            br
+            label(for="password") Password:
+            input(type="password", name="password", id="password")
+            br
+            br
+            input(type="submit", value="Login")
+            if error
+                p(style="color:red")= error
+        

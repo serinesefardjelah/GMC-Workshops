@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    form(action='/articles/add', method='POST')
+        label(for='title') Title
+        input(type='text', name='title', id='title')
+        br
+        label(for='author') Author
+        input(type='text', name='author', id='author')
+        br
+        label(for='body') Body
+        input(type='text', name='body', id='body')
+        br
+        input(type='submit', value='Submit')

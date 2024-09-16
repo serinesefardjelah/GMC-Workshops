@@ -1,0 +1,10 @@
+Our problem to solve during this workshop is to create a contact app schema and validate the fields before saving them using mongoose.
+The contact should have the following fields:
+Full name it type is String
+Email : type String
+Phone Number: type Number
+Birthdate: type Number
+Create a model called contacts
+Create the method of searching a contact
+Create a method of searching and update a contact
+Create a method of searching and removing data

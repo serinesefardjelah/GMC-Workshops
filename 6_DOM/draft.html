@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="button">OFF</button>
+
+    <h1 id="big-title">Learning DOM</h1>
+    <h3>We use DOM for</h3>
+    <ul class="dom-use-cases">
+      <li>1.Adding elements</li>
+      <li>2.Removing elements</li>
+      <li>3.Modifying elements</li>
+      <li>4.Adding events</li>
+    </ul>
+    <h3>An other unordere list</h3>
+    <ul class="dom-use-cases">
+      <li>new unordered list</li>
+    </ul>
+    <h1>Learning events</h1>
+    <button onclick="clickedBtn()">Click me</button>
+    <button id="btn-el">Click to add an event listener</button>
+    <div class="d-flex h-100">
+      <p>try pressing some keys:</p>
+      <p id="log"></p>
+    </div>
+    <span class="text-desc" id="main-paragraph"></span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quos
+      eveniet.
+    </span>
+    <button type="button" id="myBtn">Click Me</button>
+
+
+    
+    <script>
+      var mainEl = document.getElementById("main-paragraph");
+      console.log("el:", mainEl);
+
+      var elClassName = mainEl.getAttribute("class");
+      console.log("elClassName:", elClassName);
+       // Selecting the element
+       let button = document.getElementById("myBtn");
+      // Setting new attributes
+      button.setAttribute("class", "click-btn");
+      button.setAttribute("disabled", "");
+      //btn.removeAttribute("disabled");
+
+      const buttonElem = document.getElementById("button");
+
+      buttonElem.addEventListener("click", () => {
+        const oldText = buttonElem.innerText;
+        return (button.innerText = oldText === "ON" ? "OFF" : "ON");
+      });
+      // let li = document.querySelector("li");
+      // console.log("li is ", li);
+
+      // let ele = document.querySelector(".dom-use-cases li ");
+      // console.log("ele is ", ele);
+
+      let h3 = document.querySelector("h3");
+      h3.style.color = "green";
+      // console.log("h3 is ", h3);
+      // console.log(document);
+      // let title = document.getElementById("big-title");
+      // console.log("title is ", title);
+      let li = document.querySelectorAll("li");
+      console.log("li is ", li);
+      li[0].innerHTML = "changed with JS DOM";
+      let ul = document.getElementsByClassName("dom-use-cases");
+      console.log("elementns that has class dom-use-cases ", ul);
+
+      let newLi = document.createElement("li");
+      newLi.innerHTML = "i'm a new li element";
+      newLi.style.color = "red";
+      ul[0].appendChild(newLi);
+      //ul[0].removeChild(li[1]);
+      //ul[0].remove();
+      function clickedBtn() {
+        alert("Button clicked");
+      }
+
+      function clickedBtn2() {
+        alert("Button clicked with event listener");
+      }
+      let btn = document.getElementById("btn-el");
+      btn.addEventListener("click", clickedBtn2);
+      btn.removeEventListener("click", clickedBtn2);
+
+      document.addEventListener("keydown", logKey);
+      //event handler
+      function logKey(e) {
+        const log = document.getElementById("log");
+        log.textContent = e.code;
+      }
+    </script>
+  </body>
+</html>

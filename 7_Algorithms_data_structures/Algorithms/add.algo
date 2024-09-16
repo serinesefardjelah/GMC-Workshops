@@ -1,0 +1,16 @@
+ALGORITHM algorithm_name
+VAR
+    num1, num2, num3: INTEGER;
+    sum: INTEGER:= 0;
+    MY_VARIABLE: STRING;
+
+CONST
+    pi = 3.14;
+BEGIN
+    Read(num1, num2, num3)
+
+    sum := num1 + num2 + num3;
+    MY_VARIABLE := sum;
+    sum := MY_VARIABLE;
+    write(sum);
+END

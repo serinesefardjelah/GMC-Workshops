@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "name": "my_package",
+  "version": "1.0.0",
+  "description": "description of my package",
+  "main": "app.js",
+  "scripts": {
+    "test": "test_my_package",
+    "watch": "nodemon  express.js"
+  },
+  "author": "serine",
+  "license": "ISC"
+}
