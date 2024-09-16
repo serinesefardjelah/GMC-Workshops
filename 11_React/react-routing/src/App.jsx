@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Layout from "./layouts/layout";
 import User from "./components/User";
 import ProductDetails from "./components/ProductDetails";
+import NotFound from "./components/NotFound";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         {/* use layout to render routes */}
 
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+
           <Route path="/products" element={<Products />} />
           <Route path="/category/:name" element={<Category />} />
           <Route path="/category" element={<Category />} />
@@ -28,6 +32,7 @@ function App() {
         </Route>
 
         <Route path="/main" element={<h1>jsx with no layout</h1>}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       {/* <App /> */}
       {/* <MoviesList /> */}
-      <Dictionnary />
-      {/* <PostUser /> */}
+      {/* <Dictionnary /> */}
+      <PostUser />
     </BrowserRouter>
     {/* <Home /> */}
   </React.StrictMode>

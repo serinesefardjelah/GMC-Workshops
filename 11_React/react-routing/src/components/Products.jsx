@@ -2,32 +2,26 @@ import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "./ProductCard";
-// import { Spinner } from "@material-tailwind/react";
 import MySpinner from "./MySpinner";
 import getProduct from "../services/productServices/getProduct";
+import useFetch from "../services/productServices/useFetch";
 function Products() {
   let auth = true;
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [category, setCategory] = useState("beauty");
+  const [category, setCategory] = useState("");
   const productsUrl = "https://dummyjson.com/products";
 
-  useEffect(() => {
-    getProduct(productsUrl).then((data) => {
-      setProducts(data.products);
-      setLoading(false);
-    });
-  }, []);
+  const { data, loading } = useFetch(productsUrl);
+  const products = data && data.products;
 
   if (!auth) {
     // navigate("/login");
     return <Navigate to="/login" />;
   }
 
-  const filteredProducts = products.filter(
-    (product) => product.category === category
-  );
+  const filteredProducts = products
+    ? products.filter((product) => product.category === category)
+    : [];
 
   return (
     <div>
@@ -53,11 +47,15 @@ function Products() {
           <p className="text-2xl font-bold text-center mt-4">Products</p>
           <div className="flex justify-center items-center  mt-12">
             <div className="flex flex-wrap justify-center items-center gap-4">
-              {filteredProducts &&
-                filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              {console.log("type of products", typeof products)}
+              {filteredProducts.length > 0
+                ? filteredProducts &&
+                  filteredProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))
+                : products &&
+                  products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
             </div>
           </div>{" "}
         </>

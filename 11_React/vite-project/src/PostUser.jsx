@@ -3,7 +3,6 @@ import { useState } from "react";
 const PostUser = () => {
   const [user, setUser] = useState();
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
